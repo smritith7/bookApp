@@ -1,0 +1,31 @@
+{% extends 'app.html' %}
+{% block content %}
+
+<div class="container">
+   <h1>Add Book</h1>
+   <div>
+      <form class="row g-3" action="{{ url_for('insert') }}" method="POST">
+         <div class="col-md-6">
+           <label for="title" class="form-label">Title</label>
+           <input type="text" class="form-control" id="title" name="title" required>
+         </div>
+         <div class="col-md-6">
+           <label for="author" class="form-label">Author</label>
+           <input type="text" class="form-control" id="author" name="author" required>
+         </div>
+         <div class="col-md-6">
+            <label for="gerne" class="form-label">gerne</label>
+            <input type="text" class="form-control" id="gerne" name="gerne" required>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="detail" class="form-label">Detail</label>
+            <textarea class="form-control" id="detail" name="detail" rows="3"></textarea>
+          </div>
+         <div class="col-12">
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+       </form>
+   </div>
+</div>
+
+{% endblock %}

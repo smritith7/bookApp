@@ -1,0 +1,40 @@
+{% extends 'app.html' %}
+{% block content %}
+
+<div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            {% if user %}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li>{{ user[1] }}</li>
+            </ul>
+            <span class="navbar-text">
+                <a href="/logout" class="btn btn-primary">Logout</a>
+            </span>
+        {% endif %}
+
+          </div>
+        </div>
+      </nav>
+</div>
+<div class="container ">
+    <div class="pt-5 pb-5">
+    <h2>Welcome to the Dashboard</h2>
+    </div>
+    <div class="main-content">
+    <ul>
+        <li>
+            <a href="{{ url_for('book_form') }}" class="btn btn-success pull-right">Add Book</a>
+        </li>
+        <li>
+            <a href="{{ url_for('book_list') }}" class="btn btn-success pull-right">Book List</a>
+    </ul>
+    </div>
+</div>
+
+{% endblock %}
